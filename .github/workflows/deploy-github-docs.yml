@@ -63,20 +63,11 @@ jobs:
           pnpm cpx "docs/sitemap2/dist/**" dist/sitemap
           pnpm cpx "docs/theme/dist/**" dist
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: codebug8/vuepress-theme-hope
-          branch: gh-pages
-          folder: dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           repo: codebug8/vuepress-theme-hope
-          target_branch: gh-pages
+          target_branch: main
           build_dir: dist
         env:
           GH_PAT: ${{ secrets.ACCESS_TOKEN }}
