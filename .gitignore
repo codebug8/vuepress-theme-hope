@@ -9,8 +9,7 @@ packages/*/lib/
 **/.vuepress/.cache/**
 # Vuepress Temp
 **/.vuepress/.temp/**
-# Vuepress Output
-dist/
+
 
 # npm config
 .npmrc
