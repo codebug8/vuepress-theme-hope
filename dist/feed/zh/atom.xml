@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://vuepress-theme-hope.github.io/v2/feed/zh/atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+  <id>https://vuepress-theme-hope.github.io/v2/feed/zh/</id>
+  <title>Feed 生成器</title>
+  <subtitle>VuePress2 Feed 插件</subtitle>
+  <icon>https://vuepress-theme-hope.github.io/v2/feed/favicon.ico</icon>
+  <updated>2023-06-28T08:44:35.398Z</updated>
+  <generator>vuepress-plugin-feed2</generator>
+  <link rel="self" href="https://vuepress-theme-hope.github.io/v2/feed/zh/atom.xml"/>
+  <link rel="alternate" href="https://vuepress-theme-hope.github.io/v2/feed/zh/"/>
+  <entry>
+    <title type="text">演示</title>
+    <id>https://vuepress-theme-hope.github.io/v2/feed/zh/demo.html</id>
+    <link href="https://vuepress-theme-hope.github.io/v2/feed/zh/demo.html"/>
+    <updated>2023-06-28T08:44:35.450Z</updated>
+    <summary type="html"><![CDATA[<p>为了让你更好的了解如何使用插件，我们使用 <code>vuepress-plugin-feed2</code> 和 <code>@vuepress/theme-default</code> 制作了一个案例。</p>
+<ul>
+<li><a href="https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/feed2/" target="_blank" rel="noopener noreferrer">源代码</a></li>
+<li><a href="https://plugin-feed2-demo.vuejs.press" target="_blank" rel="noopener noreferrer">预览</a></li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[<p>为了让你更好的了解如何使用插件，我们使用 <code>vuepress-plugin-feed2</code> 和 <code>@vuepress/theme-default</code> 制作了一个案例。</p>
+<ul>
+<li><a href="https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/demo/feed2/" target="_blank" rel="noopener noreferrer">源代码</a></li>
+<li><a href="https://plugin-feed2-demo.vuejs.press" target="_blank" rel="noopener noreferrer">预览</a></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title type="text">指南</title>
+    <id>https://vuepress-theme-hope.github.io/v2/feed/zh/guide.html</id>
+    <link href="https://vuepress-theme-hope.github.io/v2/feed/zh/guide.html"/>
+    <updated>2023-06-28T08:44:35.453Z</updated>
+    <summary type="html"><![CDATA[<h2> 使用</h2>
+<p><code>vuepress-plugin-feed2</code> 插件可为你生成以下三种格式的 feed 文件:</p>
+<ul>
+<li>Atom 1.0</li>
+<li>JSON 1.1</li>
+<li>RSS 2.0</li>
+</ul>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。</p>
+<p>如果可以，请尽可能使用 RSS。</p>
+</div>
+<p>请按照需要生成的格式，在插件选项中设置 <code>atom</code>, <code>json</code> 或 <code>rss</code> 为 <code>true</code>。</p>]]></summary>
+    <content type="html"><![CDATA[<h2> 使用</h2>
+<p><code>vuepress-plugin-feed2</code> 插件可为你生成以下三种格式的 feed 文件:</p>
+<ul>
+<li>Atom 1.0</li>
+<li>JSON 1.1</li>
+<li>RSS 2.0</li>
+</ul>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>Atom 和 JSON 是为了提供更多 Feed 软件的适配而提供的。</p>
+<p>如果可以，请尽可能使用 RSS。</p>
+</div>
+<p>请按照需要生成的格式，在插件选项中设置 <code>atom</code>, <code>json</code> 或 <code>rss</code> 为 <code>true</code>。</p>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>当然，你可以都输出它们，这不是一个三选一。</p>
+</div>
+<p>考虑到现在 Feed 已经很小众，本插件旨在提供最小配置来尽可能自动生成详细的 Feed 文件。当然本插件也预留了充足的设置项，以让你自由定义 Feed 的输出内容。</p>
+<p>为了正确生成链接地址，你需要在插件选项中设置 <code>hostname</code> (部署域名)，</p>
+<h2> 频道设置</h2>
+<p>你可以通过设置 <code>channel</code> 选项来自自定义 Feed 频道的各项信息。</p>
+<p>我们推荐进行如下设置:</p>
+<ul>
+<li>将建立 Feed 的日期转换为 ISOString 写入到 <code>channel.pubDate</code> 中</li>
+<li>通过 <code>channel.ttl</code> 中设置内容的更新周期(单位: 分钟)</li>
+<li>通过 <code>channel.copyright</code> 设置版权信息</li>
+<li>通过 <code>channel.author</code> 设置频道作者。</li>
+</ul>
+<div class="hint-container tip">
+<p class="hint-container-title">默认频道设置</p>
+<ul>
+<li>
+<p>频道的标题、描述默认为站点的名称与链接。</p>
+</li>
+<li>
+<p>频道的链接、最后更新时间会由插件自动生成。</p>
+</li>
+<li>
+<p>频道的版权信息会尝试从页脚的版权信息中读取。</p>
+</li>
+</ul>
+</div>
+<p>详细的选项及其默认值详见 <a href="/v2/feed/zh/config/channel.html" target="blank">配置 → 频道设置</a></p>
+<h2> 生成控制</h2>
+<h3> 项目默认生成逻辑</h3>
+<p>默认情况下，所有文章均会被添加至 feed 流。</p>
+<p>关于默认情况下读取的内容，详见 <a href="/v2/feed/zh/config/item.html" target="blank">配置 → 项目控制</a></p>
+<h3> 自定义页面</h3>
+<p>你可以通过配置 frontmatter 中的 <code>feed</code> 选项，对特定文章的 feed 项目生成的内容进行控制。</p>
+<p>详细的选项及其默认值详见 <a href="/v2/feed/zh/config/item.html" target="blank">配置 → 项目设置</a></p>
+<h3> 自定义 Feed 生成</h3>
+<p>你可以通过配置插件选项中的 <code>getter</code>，完全控制 Feed 项目的生成逻辑。</p>
+<p>详细的选项及其默认值详见 <a href="/v2/feed/zh/config/getter.html" target="blank">配置 → Feed 获取器</a></p>
+<h3> 多语言配置</h3>
+<p>插件会针对每个语言生成单独的 Feed。</p>
+<p>你可以通过插件选项中的 <code>locales</code> 分别对不同语言提供不同的默认设置。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title type="text">迁移至 V2</title>
+    <id>https://vuepress-theme-hope.github.io/v2/feed/zh/migration.html</id>
+    <link href="https://vuepress-theme-hope.github.io/v2/feed/zh/migration.html"/>
+    <updated>2023-06-28T08:44:35.457Z</updated>
+    <summary type="html"><![CDATA[<p>名称从 <code>@mr-hope/vuepress-feed</code> 改为 <code>vuepress-plugin-feed2</code>. ⚠</p>
+<h2> 输出选项变更</h2>
+<ul>
+<li>
+<p>所有的输出选项从插件选项中的 <code>output</code> 选项移出到根选项下，并进行了重命名。</p>
+<ul>
+<li>
+<p><code>output.atom.enable</code> 重命名为 <code>atom</code></p>
+</li>
+<li>
+<p><code>output.json.enable</code> 重命名为 <code>json</code></p>
+</li>
+<li>
+<p><code>output.rss.enable</code> 重命名为 <code>rss</code></p>
+</li>
+<li>
+<p><code>output.atom.path</code> 重命名为 <code>atomOutputFilename</code></p>
+</li>
+<li>
+<p><code>output.json.path</code> 重命名为 <code>jsonOutputFilename</code></p>
+</li>
+<li>
+<p><code>output.rss.path</code> 重命名为 <code>rssOutputFilename</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>现在插件不会再默认生成三种格式，你需要手动启用以输出需要的格式。</p>
+<ul>
+<li><code>atom</code>, <code>json</code> 和 <code>rss</code> 现在默认为 <code>false</code></li>
+</ul>
+</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[<p>名称从 <code>@mr-hope/vuepress-feed</code> 改为 <code>vuepress-plugin-feed2</code>. ⚠</p>
+<h2> 输出选项变更</h2>
+<ul>
+<li>
+<p>所有的输出选项从插件选项中的 <code>output</code> 选项移出到根选项下，并进行了重命名。</p>
+<ul>
+<li>
+<p><code>output.atom.enable</code> 重命名为 <code>atom</code></p>
+</li>
+<li>
+<p><code>output.json.enable</code> 重命名为 <code>json</code></p>
+</li>
+<li>
+<p><code>output.rss.enable</code> 重命名为 <code>rss</code></p>
+</li>
+<li>
+<p><code>output.atom.path</code> 重命名为 <code>atomOutputFilename</code></p>
+</li>
+<li>
+<p><code>output.json.path</code> 重命名为 <code>jsonOutputFilename</code></p>
+</li>
+<li>
+<p><code>output.rss.path</code> 重命名为 <code>rssOutputFilename</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>现在插件不会再默认生成三种格式，你需要手动启用以输出需要的格式。</p>
+<ul>
+<li><code>atom</code>, <code>json</code> 和 <code>rss</code> 现在默认为 <code>false</code></li>
+</ul>
+</li>
+</ul>
+<h2> 新增功能</h2>
+<ul>
+<li>
+<p>支持通过 <code>preservedElements</code> 选项移除自定义组件和元素 <img src="https://img.shields.io/badge/-新增-brightgreen" alt="新增"></p>
+</li>
+<li>
+<p>可视化的 Atom 和 RSS 流，支持通过 <code>atomXslFilename</code> <code>atomXslTemplate</code> <code>rssXslFilename</code> 和 <code>rssXslTemplate</code> 配置 <img src="https://img.shields.io/badge/-新增-brightgreen" alt="新增"></p>
+</li>
+<li>
+<p>通过 <code>getter</code> 选项完全自定义 Feed 生成 <img src="https://img.shields.io/badge/-新增-brightgreen" alt="新增"></p>
+</li>
+<li>
+<p>多分类支持 <img src="https://img.shields.io/badge/-新增-brightgreen" alt="新增"></p>
+</li>
+<li>
+<p>更美观的日志输出 <img src="https://img.shields.io/badge/-改进-blue" alt="改进"></p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title type="text">频道设置</title>
+    <id>https://vuepress-theme-hope.github.io/v2/feed/zh/config/channel.html</id>
+    <link href="https://vuepress-theme-hope.github.io/v2/feed/zh/config/channel.html"/>
+    <updated>2023-06-28T08:44:35.459Z</updated>
+    <summary type="html"><![CDATA[<p><code>channel</code> 选项用于配置 feed 的频道。可以配置的选项与默认值如下:</p>
+<h2> channel.title</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: <code>SiteConfig.title</code></li>
+</ul>
+<p>频道的标题</p>
+<h2> channel.link</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: 部署的网址 (通过 <code>options.hostname</code> 和 <code>context.base</code> 生成)</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[<p><code>channel</code> 选项用于配置 feed 的频道。可以配置的选项与默认值如下:</p>
+<h2> channel.title</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: <code>SiteConfig.title</code></li>
+</ul>
+<p>频道的标题</p>
+<h2> channel.link</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: 部署的网址 (通过 <code>options.hostname</code> 和 <code>context.base</code> 生成)</li>
+</ul>
+<p>频道地址</p>
+<h2> channel.description</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: <code>SiteConfig.description</code></li>
+</ul>
+<p>频道描述信息</p>
+<h2> channel.language</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值:
+<ul>
+<li><code>siteConfig.locales['/'].locales</code></li>
+<li>如果上述未提供，回退到 <code>"en-US"</code></li>
+</ul>
+</li>
+</ul>
+<p>频道使用的语言</p>
+<h2> channel.copyright</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值:
+<ul>
+<li>尝试读取 channel 选项中的 <code>author.name</code> 生成 <code>Copyright by $author</code></li>
+</ul>
+</li>
+<li>建议自行设置: <strong>是</strong></li>
+</ul>
+<p>频道版权信息</p>
+<h2> channel.pubDate</h2>
+<ul>
+<li>类型: <code>string</code> (需是合法的 Date ISOString)</li>
+<li>默认值: 每次插件构建时刻</li>
+<li>建议自行设置: <strong>是</strong></li>
+</ul>
+<p>频道内容的发布时间</p>
+<h2> channel.lastUpdated</h2>
+<ul>
+<li>类型: <code>string</code> (需是合法的 Date ISOString)</li>
+<li>默认值: 每次插件构建时刻</li>
+</ul>
+<p>频道内容的上次更新时间</p>
+<h2> channel.ttl</h2>
+<ul>
+<li>类型: <code>number</code></li>
+<li>建议自行设置: <strong>是</strong></li>
+</ul>
+<p>内容有效时间，即获取后保持缓存而不进行新获取的时间</p>
+<h2> channel.image</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>建议自行设置: <strong>是</strong></li>
+</ul>
+<p>这是一个会在频道中使用的图片，建议设置正方形图片、尺寸最好不小于 512×512。</p>
+<h2> channel.icon</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>建议自行设置: <strong>是</strong></li>
+</ul>
+<p>一个代表频道的图标，建议设置正方形图片、尺寸最好不小于 128×128，背景色透明。</p>
+<h2> channel.author</h2>
+<ul>
+<li>类型: <code>FeedAuthor</code></li>
+<li>建议自行设置: <strong>是</strong></li>
+</ul>
+<p>频道的作者。</p>
+<details class="hint-container details"><summary>FeedAuthor 格式</summary>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h2> channel.hub</h2>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>Websub 的链接。Websub 需要服务器后端，与 VuePress 主旨不符，如无特殊需要忽略即可。</p>
+<div class="hint-container info">
+<p class="hint-container-title">WebSub</p>
+<p>有关信息，详见 <a href="https://w3c.github.io/websub/#subscription-migration" target="_blank" rel="noopener noreferrer">Websub</a>。</p>
+</div>
+]]></content>
+  </entry>
+  <entry>
+    <title type="text">Feed 获取器</title>
+    <id>https://vuepress-theme-hope.github.io/v2/feed/zh/config/getter.html</id>
+    <link href="https://vuepress-theme-hope.github.io/v2/feed/zh/config/getter.html"/>
+    <updated>2023-06-28T08:44:35.465Z</updated>
+    <summary type="html"><![CDATA[<p>你可以通过控制插件选项中的 <code>getter</code> 来完全控制 Feed 项目的生成。</p>
+<h2> getter.title</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; string</code></li>
+</ul>
+<p>项目标题获取器</p>
+<h2> getter.link</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; string</code></li>
+</ul>
+<p>项目链接获取器</p>
+<h2> getter.description</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; string | undefined</code></li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[<p>你可以通过控制插件选项中的 <code>getter</code> 来完全控制 Feed 项目的生成。</p>
+<h2> getter.title</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; string</code></li>
+</ul>
+<p>项目标题获取器</p>
+<h2> getter.link</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; string</code></li>
+</ul>
+<p>项目链接获取器</p>
+<h2> getter.description</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; string | undefined</code></li>
+</ul>
+<p>项目描述获取器</p>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
+<p>由于为 Atom 在摘要中支持 HTML，所以如果可能的话，你可以在这里返回 HTML 内容，但内容必须以标记 <code>html:</code> 开头。</p>
+</div>
+<h2> getter.content</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; string</code></li>
+</ul>
+<p>项目内容获取器</p>
+<h2> getter.author</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; FeedAuthor[]</code></li>
+</ul>
+<p>项目作者获取器。</p>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
+<p>获取器应在作者信息缺失时返回空数组。</p>
+</div>
+<details class="hint-container details"><summary>FeedAuthor 格式</summary>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h2> getter.category</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; FeedCategory[] | undefined</code></li>
+</ul>
+<p>项目分类获取器。</p>
+<details class="hint-container details"><summary>FeedCategory 格式</summary>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h2> getter.enclosure</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; FeedEnclosure | undefined</code></li>
+</ul>
+<p>项目附件获取器。</p>
+<details class="hint-container details"><summary>FeedEnclosure 格式</summary>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h2> getter.publishDate</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; Date | undefined</code></li>
+</ul>
+<p>项目发布日期获取器</p>
+<h2> getter.lastUpdateDate</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; Date</code></li>
+</ul>
+<p>项目最后更新日期获取器</p>
+<h2> getter.image</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; string</code></li>
+</ul>
+<p>项目图片获取器</p>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
+<p>请注意你必须确保返回一个完整的 URL。</p>
+</div>
+<h2> getter.contributor</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; FeedContributor[]</code></li>
+</ul>
+<p>项目贡献者获取器</p>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
+<p>获取器应在贡献者信息缺失时返回空数组。</p>
+</div>
+<details class="hint-container details"><summary>FeedContributor 格式</summary>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h2> getter.copyright</h2>
+<ul>
+<li>类型: <code>(page: Page) =&gt; string | undefined</code></li>
+</ul>
+<p>项目版权获取器</p>
+]]></content>
+  </entry>
+  <entry>
+    <title type="text">页面设置</title>
+    <id>https://vuepress-theme-hope.github.io/v2/feed/zh/config/item.html</id>
+    <link href="https://vuepress-theme-hope.github.io/v2/feed/zh/config/item.html"/>
+    <updated>2023-06-28T08:44:35.467Z</updated>
+    <summary type="html"><![CDATA[<p>你可以通过配置每个页面的 Frontmatter，来对每个 Feed 项目生成进行单独的控制。</p>
+<h2> 添加与移除</h2>
+<p>默认情况下，所有文章均会被添加至 feed 流。如果你想在 feed 中移除特定页面，你可以在 frontmatter 中设置 <code>feed: false</code>。</p>
+<h2> 默认读取内容</h2>
+<p>Feed 项目生成中会读取 <code>page.except</code> 和页面的原本内容。</p>
+<p>Feed 项目生成中读取的 frontmatter 选项及对应含义如下:</p>
+<h3> title</h3>]]></summary>
+    <content type="html"><![CDATA[<p>你可以通过配置每个页面的 Frontmatter，来对每个 Feed 项目生成进行单独的控制。</p>
+<h2> 添加与移除</h2>
+<p>默认情况下，所有文章均会被添加至 feed 流。如果你想在 feed 中移除特定页面，你可以在 frontmatter 中设置 <code>feed: false</code>。</p>
+<h2> 默认读取内容</h2>
+<p>Feed 项目生成中会读取 <code>page.except</code> 和页面的原本内容。</p>
+<p>Feed 项目生成中读取的 frontmatter 选项及对应含义如下:</p>
+<h3> title</h3>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>由 VuePress 自动生成，默认为页面的 h1 内容</p>
+<h3> description</h3>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>页面描述</p>
+<h3> date</h3>
+<ul>
+<li>类型: <code>Date</code></li>
+</ul>
+<p>页面的发布日期</p>
+<h3> article</h3>
+<ul>
+<li>类型: <code>boolean</code></li>
+</ul>
+<p>该页面是否是文章</p>
+<blockquote>
+<p>如果此项设置为 <code>false</code>，则该页不会包含在最终的 feed 中。</p>
+</blockquote>
+<h3> copyright</h3>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>页面版权信息</p>
+<h3> image</h3>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>页面的封面/分享图，需为完整链接或绝对链接。</p>
+<h2> FrontMatter 中的 Feed 配置</h2>
+<h3> feed.title</h3>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>Feed 项目的标题</p>
+<h3> feed.description</h3>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>Feed 项目的描述</p>
+<h3> feed.content</h3>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>Feed 项目的内容</p>
+<h3> feed.author</h3>
+<ul>
+<li>类型: <code>FeedAuthor[] | FeedAuthor</code></li>
+</ul>
+<p>Feed 项目的作者</p>
+<details class="hint-container details"><summary>FeedAuthor 格式</summary>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h3> feed.contributor</h3>
+<ul>
+<li>类型: <code>FeedContributor[] | FeedContributor</code></li>
+</ul>
+<p>Feed 项目的贡献者</p>
+<details class="hint-container details"><summary>FeedContributor 格式</summary>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h3> feed.guid</h3>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>Feed 项目的标识符，用于标识 Feed 项目。</p>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
+<p>你应该确保此项全局唯一。</p>
+</div>
+]]></content>
+  </entry>
+  <entry>
+    <title type="text">插件配置</title>
+    <id>https://vuepress-theme-hope.github.io/v2/feed/zh/config/</id>
+    <link href="https://vuepress-theme-hope.github.io/v2/feed/zh/config/"/>
+    <updated>2023-06-28T08:44:35.470Z</updated>
+    <summary type="html"><![CDATA[<h2> hostname</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>必填: 是</li>
+</ul>
+<p>部署网站的域名。</p>
+<h2> atom</h2>
+<ul>
+<li>类型: <code>boolean</code></li>
+<li>默认值: <code>false</code></li>
+</ul>
+<p>是否启用 Atom 格式输出。</p>
+<h2> json</h2>
+<ul>
+<li>类型: <code>boolean</code></li>
+<li>默认值: <code>false</code></li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[<h2> hostname</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>必填: 是</li>
+</ul>
+<p>部署网站的域名。</p>
+<h2> atom</h2>
+<ul>
+<li>类型: <code>boolean</code></li>
+<li>默认值: <code>false</code></li>
+</ul>
+<p>是否启用 Atom 格式输出。</p>
+<h2> json</h2>
+<ul>
+<li>类型: <code>boolean</code></li>
+<li>默认值: <code>false</code></li>
+</ul>
+<p>是否启用 JSON 格式输出。</p>
+<h2> rss</h2>
+<ul>
+<li>类型: <code>boolean</code></li>
+<li>默认值: <code>false</code></li>
+</ul>
+<p>是否启用 RSS 格式输出。</p>
+<h2> image</h2>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>一个大的图片，用作 feed 展示。</p>
+<h2> icon</h2>
+<ul>
+<li>类型: <code>string</code></li>
+</ul>
+<p>一个小的图标，显示在订阅列表中。</p>
+<h2> count</h2>
+<ul>
+<li>类型: <code>number</code></li>
+<li>默认值: <code>100</code></li>
+</ul>
+<p>设置 feed 的最大项目数量。在所有页面排序好后，插件会截取前 count 个项目。</p>
+<p>如果你的站点文章很多，你应该考虑设置这个选项以减少 feed 文件大小。</p>
+<h2> preservedElements</h2>
+<ul>
+<li>类型: <code>(RegExp | string)[] | (tagName: string) =&gt; boolean</code></li>
+<li>默认值: <code>[]</code></li>
+</ul>
+<p>应在 Feed 中保留的自定义元素或组件。</p>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
+<p>默认情况下，所有的未知标签都会被移除。</p>
+</div>
+<h2> filter</h2>
+<ul>
+<li>
+<p>类型: <code>(page: Page)=&gt; boolean</code></p>
+</li>
+<li>
+<p>默认值:</p>
+<div class="language-typescript" data-ext="ts"></div></li>
+</ul>
+<p>自定义的过滤函数，用于过滤哪些项目在 feed 中显示。</p>
+<h2> sort</h2>
+<ul>
+<li>类型: <code>(pageA: Page, pageB: Page)=&gt; number</code></li>
+</ul>
+<p>自定义排序函数，用于对站点中的页面进行排序。</p>
+<p>最终生成的 feed 文件将会按照这个顺序对项目进行显示。</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>强烈建议设置这个选项，否则 feed 流中，项目的顺序完全由 VuePress 默认输出的 pages 顺序决定。</p>
+<p>你可以按照自己的需求对站点内的页面进行排序。</p>
+</div>
+<h2> channel</h2>
+<p><code>channel</code> 选项用于配置 Feed 频道。</p>
+<p>可用选项详见 <a href="/v2/feed/zh/config/channel.html" target="blank">配置 → 频道设置</a></p>
+<h2> atomOutputFilename</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: <code>"atom.xml"</code></li>
+</ul>
+<p>Atom 格式输出路径，相对于输出路径。</p>
+<h2> atomXslTemplate</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: <code>"vuepress-plugin-feed2/templates/atom.xsl"</code></li>
+</ul>
+<p>Atom xsl 模板文件路径</p>
+<h2> atomXslFilename</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: <code>"atom.xsl"</code></li>
+</ul>
+<p>Atom xsl 输出路径，相对于输出路径。</p>
+<h2> jsonOutputFilename</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: <code>"feed.json"</code></li>
+</ul>
+<p>JSON 格式输出路径，相对于输出路径。</p>
+<h2> rssOutputFilename</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: <code>"rss.xml"</code></li>
+</ul>
+<p>RSS 格式输出路径，相对于输出路径。</p>
+<h2> rssXslTemplate</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: <code>"vuepress-plugin-feed2/templates/rss.xsl"</code></li>
+</ul>
+<p>RSS xsl 模板文件路径。</p>
+<h2> rssXslFilename</h2>
+<ul>
+<li>类型: <code>string</code></li>
+<li>默认值: <code>"rss.xsl"</code></li>
+</ul>
+<p>RSS xsl 输出路径，相对于输出路径。</p>
+<h2> getter</h2>
+<p>Feed 生成控制器</p>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>插件已经在默认情况下提供了合理的获取器，如果你需要完全控制 Feed 生成，你可以设置此项。</p>
+</div>
+<p>详见 <a href="/v2/feed/zh/config/getter.html" target="blank">Feed 生成器</a>.</p>
+<h2> locales</h2>
+<ul>
+<li>类型: <code>Record&lt;string, BaseFeedOptions&gt;</code></li>
+<li>必填: 否</li>
+</ul>
+<p>你可以将它用于每个语言环境的特定选项。</p>
+<p>除 <code>hostname</code> 外，上述任何选项均受支持。</p>
+]]></content>
+  </entry>
+</feed>
